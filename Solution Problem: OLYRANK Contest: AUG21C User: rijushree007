@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t,g1,s1,b1,g2,s2,b2;
+    cin>>t;
+    while(t--)
+    {
+        cin>>g1>>s1>>b1>>g2>>s2>>b2;
+        int result=((g1+s1+b1)>(g2+s2+b2))?1:2;
+        cout<<result<<endl;
+    }
+}
