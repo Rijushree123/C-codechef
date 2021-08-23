@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        int Activity;
+        string Origin;
+
+        cin>>Activity>>Origin;
+        int laddus=0;
+        while(Activity--)
+        {
+            string s;
+            cin>>s;
+            if(s=="CONTEST_WON")
+            {
+                int x;
+                cin>>x;
+                laddus+=300;
+                if(x<=20)
+                {
+                    laddus+=20-x;
+                }
+            }
+            else if(s=="TOP_CONTRIBUTOR")
+            {
+                laddus+=300;
+            }
+            else if(s=="BUG_FOUND")
+            {
+                int x;
+                cin>>x;
+                laddus+=x;
+            }
+            else
+            {
+                laddus+=50;
+            }
+        }
+        int redeem=(Origin=="INDIAN")?200:400;
+        int months=laddus/redeem;
+        cout<<months<<'\n';
+    }
+}
